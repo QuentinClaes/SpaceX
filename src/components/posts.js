@@ -28,7 +28,7 @@ const Posts = () => {
             <h1>Posts</h1>
             <ul>
                 {console.log('mon post', posts)}
-                {posts.docs[0] ? posts.docs.map((post) => (
+                {posts.docs&&[0] ? posts.docs.map((post) => (
                     <li key={post.name}>{post.name} <WrapperImg src={post.links.patch.large}/></li>
                 )): null}
             </ul>
