@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { loadposts } from "../store/posts";
+import { loadlaunches } from "../store/GET_LAUNCHES";
 import { useEffect } from "react";
 import styled from "styled-components";
 import Table from "@mui/material/Table";
@@ -70,7 +70,7 @@ const Launches = () => {
     },
   };
   useEffect(() => {
-    dispatch(loadposts(options));
+    dispatch(loadlaunches(options));
   }, [dispatch, limit, page]);
 
   const handleChangePage = (event, newPage) => {
