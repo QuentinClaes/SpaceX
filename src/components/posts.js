@@ -144,7 +144,15 @@ const Posts = () => {
                             src={row.links.patch.small}
                           />
                         </TableCell>
-                        <TableCell component="th" scope="row">
+                        <TableCell
+                          component="th"
+                          scope="row"
+                          sx={{
+                            width: 150,
+                            textTransform: "uppercase",
+                            fontWeight: "bolder",
+                          }}
+                        >
                           {row.name}
                         </TableCell>
                         <TableCell align="left">{row.details}</TableCell>
