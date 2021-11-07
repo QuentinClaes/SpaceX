@@ -43,7 +43,7 @@ const WrapperPaper = styled(Paper)`
   padding: 20px;
 `;
 
-const Posts = () => {
+const Launches = () => {
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(10);
   const [index, setIndex] = useState(0);
@@ -232,4 +232,4 @@ const Posts = () => {
   );
 };
 
-export default Posts;
+export default Launches;

@@ -1,6 +1,6 @@
 import { Provider } from "react-redux";
 import configureStore from "./store/store";
-import Posts from "./components/posts";
+import Launches from "./components/launches";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -15,7 +15,7 @@ const App = () => {
   return (
     <Provider store={store}>
       <Wrapper>
-        <Posts />
+        <Launches />
       </Wrapper>
     </Provider>
   );
