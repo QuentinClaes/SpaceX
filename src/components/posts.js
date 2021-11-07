@@ -31,6 +31,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import Pagination from '@mui/material/Pagination';
 
 const style = {
     position: 'absolute',
@@ -66,7 +67,6 @@ const Posts = () => {
         };
     const handleClose = () => setOpen(false);
     const dispatch = useDispatch();
-    useSelector((state) => console.log('test1',state.list))
     const posts = useSelector((state) => state.list);
     const options = {
         "query": { upcoming: false},
@@ -81,6 +81,7 @@ const Posts = () => {
     }, [dispatch, limit, page]);
 
     const handleChangePage = (event, newPage) => {
+        console.log('mon event', event)
         setPage(newPage);
       };
 
@@ -134,14 +135,8 @@ const Posts = () => {
           )): null}
         </TableBody>
       </Table>
-      <TablePagination
-      component="div"
-      count={posts.totalDocs}
-      page={page}
-      onPageChange={handleChangePage}
-      rowsPerPage={limit}
-      onRowsPerPageChange={handleChangeRowsPerPage}
-    />
+      <Typography>Page: {page}</Typography>
+      <Pagination count={posts.totalPages} page={page} onChange={handleChangePage} />
     </TableContainer>
                         {posts.docs&&[index] ? <Modal
                           open={open}
