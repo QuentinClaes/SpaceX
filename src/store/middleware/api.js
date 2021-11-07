@@ -6,17 +6,13 @@ const api =
     (next) =>
     async (action) => {
         if (action.type !== actions.apiCallBegan.type) return next(action);
-        console.log('action paylos', action.payload)
         const { url, onStart, onSuccess, onError, options } =
             action.payload;
 
         if (onStart) dispatch({ type: onStart });
-
         next(action);
-
         var data = options
         var method = "Post"
-        console.log('data', data)
         try {
             const response = await axios.request({
                 baseURL: "https://api.spacexdata.com/v4/",
