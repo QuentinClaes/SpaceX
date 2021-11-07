@@ -3,8 +3,8 @@ import reducer from "./posts";
 import api from "./middleware/api";
 
 export default function store() {
-    return configureStore({
-        reducer,
-        middleware: [...getDefaultMiddleware(), api],
-    });
+  return configureStore({
+    reducer,
+    middleware: [...getDefaultMiddleware(), api],
+  });
 }
